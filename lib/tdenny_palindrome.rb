@@ -1,22 +1,25 @@
 require "tdenny_palindrome/version"
 
-class String
+module TdennyPalindrome
 
-  # Returns true for a palindrome, false otherwise.
-  def palindrome?
-    processed_content == processed_content.reverse
-  end
-
-# Returns letters in the string.
-  def letters
-    chars.select { |c| c.match(/[a-z]/i) }.join
-  end
-
-
-  private
-
-    # Returns content for palindrome testing.
-    def processed_content
-      self.letters.downcase
+    # Returns true for a palindrome, false otherwise.
+    def palindrome?
+      processed_content == processed_content.reverse
     end
+
+
+    private
+
+      # Returns content for palindrome testing.
+      def processed_content
+        self.to_s.scan(/[a-z\d]/i).join.downcase
+      end
 end
+
+class String
+ include TdennyPalindrome
+end
+
+class Integer
+  include TdennyPalindrome
+end 
