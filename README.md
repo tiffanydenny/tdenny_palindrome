@@ -21,8 +21,21 @@ Or install it yourself as:
     $ gem install tdenny_palindrome
 
 ## Usage
+`tdenny_palindrome` adds a `palindrome?` method to the `String` class, and can be used as follows:
 
-TODO: Write usage instructions here
+```
+$ irb
+>> require 'tdenny_palindrome'
+>> "A good elf".palindrome?
+=> false
+>> "Racecar".palindrome?
+=> true
+>> "Able was I, ere I saw Elba.".palindrome?
+=> true
+>> phrase = "A butt tuba."
+>> phrase.palindrome?
+=> true
+```
 
 ## Development
 
