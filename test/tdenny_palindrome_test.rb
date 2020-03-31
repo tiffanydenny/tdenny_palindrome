@@ -22,7 +22,15 @@ class TdennyPalindromeTest < Minitest::Test
     refute 12345.palindrome?
   end
 
-  def test_integer_palindrome
+  def test_integer_palindrome_two
     assert 12321.palindrome?
+  end
+
+  def test_space_not_palindrome
+    refute "   ".palindrome?
+  end
+
+  def test_empty_not_palindrome
+    refute "".palindrome?
   end
 end
